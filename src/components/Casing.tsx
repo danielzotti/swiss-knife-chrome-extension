@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Casing.scss';
 
 type Props = {
   text?: string;
@@ -10,11 +11,17 @@ export const Casing = (props: Props) => {
     setText(e.currentTarget.value);
   };
 
+  const onClick = (e: React.FormEvent<HTMLTextAreaElement>) => {
+    e.currentTarget.select();
+    e.currentTarget.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+  };
+
   return (
     <>
-      <textarea placeholder="Insert text here" onChange={ onTextChange } value={ text }></textarea>
-      <textarea disabled placeholder="UPPERCASE" value={ text?.toUpperCase() }></textarea>
-      <textarea disabled placeholder="lowercase" value={ text?.toLowerCase() }></textarea>
+      <textarea placeholder="Insert text here" onChange={ onTextChange } value={ text } onClick={ onClick }></textarea>
+      <textarea placeholder="UPPERCASE" value={ text?.toUpperCase() } onClick={ onClick }></textarea>
+      <textarea placeholder="lowercase" value={ text?.toLowerCase() } onClick={ onClick }></textarea>
     </>
   );
 };

@@ -1,10 +1,14 @@
 .App {
-
+  min-width: 400px;
+  overflow: auto;
 }
 
 textarea {
+  border:1px solid black;
   width:100%;
   max-width: 100%;
   min-width: 100%;
   display: block;
+  min-height: 30px;
 }
+
