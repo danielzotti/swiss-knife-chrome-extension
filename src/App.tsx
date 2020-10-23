@@ -1,15 +1,12 @@
 import React from 'react';
 import './App.scss';
+import { Casing } from './components/Casing';
 
 function App() {
+  const text = 'Daniel';
   return (
     <div className="App">
-      <textarea placeholder="Insert text here">
-      </textarea>
-      <textarea placeholder="UPPERCASE">
-      </textarea>
-      <textarea placeholder="lowercase">
-      </textarea>
+      <Casing text={ text }/>
     </div>
   );
 }
