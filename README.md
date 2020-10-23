@@ -42,3 +42,44 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
+
+
+```json
+{
+  "manifest_version": 2,
+  "name": "Swiss Knife",
+  "description": "A collection of tools to be used as a Chrome extension",
+  "version": "0.1",
+  "author": "Daniel Zotti",
+  "icons": {
+    "128": "images/swiss-knife-icon_128.png",
+    "48": "images/swiss-knife-icon_48.png",
+    "16": "images/swiss-knife-icon_16.png"
+  },
+  "background": {
+    "scripts": [
+      "background.js"
+    ],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_title": "Swiss knife",
+    "default_popup": "index.html",
+    "default_icon": {
+      "128": "images/swiss-knife-icon_128.png",
+      "48": "images/swiss-knife-icon_48.png",
+      "16": "images/swiss-knife-icon_16.png"
+    }
+  },
+  "options_page": "options.html",
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  },
+  "permissions": [
+    "storage"
+  ]
+}
+
+
+```

@@ -19,7 +19,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "build:extension": "INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build && mv build/index.html build/popup.html"
   },
   "eslintConfig": {
     "extends": "react-app"
