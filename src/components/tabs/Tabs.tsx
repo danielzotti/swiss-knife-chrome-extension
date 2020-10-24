@@ -1,14 +1,20 @@
-import React, { ReactElement, useState } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { TabTitle } from './TabTitle';
 import './Tabs.scss';
-import { setItemToLocalStorage } from '../../services/LocalStorage';
+import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/LocalStorage';
 
 type Props = {
   children: ReactElement[]
 }
 
 export const Tabs: React.FC<Props> = ({ children }) => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
+
+  useEffect(() => {
+    getItemFromLocalStorage('tabIndex', (tabIndex) => {
+      setActiveTab(!isNaN(parseInt(tabIndex, 10)) ? parseInt(tabIndex) : 0);
+    });
+  });
 
   const onActiveTabChanged = (tabIndex: number) => {
     setActiveTab(tabIndex);
