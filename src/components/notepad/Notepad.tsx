@@ -36,9 +36,8 @@ export const Notepad = (props: Props) => {
     <div className="Notepad">
       <div className="buttons-container">
         <button className="btn-reset" onClick={ onResetField }>
-          <FontAwesomeIcon icon="backspace"/>&nbsp;<span>Empty field</span>
+          <FontAwesomeIcon icon="backspace"/>&nbsp;<span>Empty notes</span>
         </button>
-        <span className="hint">Click on a textarea to copy the content in your clipboard</span>
       </div>
       <div className="notepad-content"
            contentEditable="true"
