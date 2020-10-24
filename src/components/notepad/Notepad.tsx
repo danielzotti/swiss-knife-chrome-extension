@@ -1,13 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import './Notepad.scss';
 import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/LocalStorage';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type Props = {
   // text?: string;
-}
-
-interface NotepaLocalStorage {
-  notepad?: string;
 }
 
 export const Notepad = (props: Props) => {
@@ -17,24 +14,7 @@ export const Notepad = (props: Props) => {
     getItemFromLocalStorage('notepad', (val: string) => {
       setInnerHtml(val, contendEditable);
     });
-    // if(chrome?.storage?.local) {
-    //   hasLocalStorageAccess = true;
-    //   chrome.storage.local.get(['notepad'], function(data: NotepaLocalStorage) {
-    //     if(data?.notepad) {
-    //       setInnerHtml(data?.notepad, contendEditable);
-    //     }
-    //   });
-    // } else {
-    //   try {
-    //     let notepad = window.localStorage.getItem('notepad');
-    //     setInnerHtml(notepad, contendEditable);
-    //   } catch(e) {
-    //     console.log('Error on saving data into localStorage', e);
-    //   }
-    // }
   });
-
-  // let hasLocalStorageAccess = false;
 
   const contendEditable = useRef<HTMLDivElement>(null);
 
@@ -47,11 +27,24 @@ export const Notepad = (props: Props) => {
     setItemToLocalStorage('notepad', val);
   };
 
+  const onResetField = () => {
+    setInnerHtml('', contendEditable);
+    setItemToLocalStorage('notepad', '');
+  };
+
   return (
-    <div className="Notepad"
-         contentEditable="true"
-         ref={ contendEditable }
-         suppressContentEditableWarning={ true }
-         onKeyUp={ onKeyUp }>&nbsp;</div>
+    <div className="Notepad">
+      <div className="buttons-container">
+        <button className="btn-reset" onClick={ onResetField }>
+          <FontAwesomeIcon icon="backspace"/>&nbsp;<span>Empty field</span>
+        </button>
+        <span className="hint">Click on a textarea to copy the content in your clipboard</span>
+      </div>
+      <div className="notepad-content"
+           contentEditable="true"
+           ref={ contendEditable }
+           suppressContentEditableWarning={ true }
+           onKeyUp={ onKeyUp }>&nbsp;</div>
+    </div>
   );
 };

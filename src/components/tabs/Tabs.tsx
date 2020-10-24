@@ -37,7 +37,6 @@ export const Tabs: React.FC<Props> = ({ children }) => {
       <div className="tabs__content">
         { children[activeTab] }
       </div>
-      <div>Current tab: { activeTab }</div>
     </div>
   );
 };
