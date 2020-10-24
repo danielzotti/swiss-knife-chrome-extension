@@ -20,8 +20,8 @@ export const Casing = (props: Props) => {
   return (
     <>
       <textarea placeholder="Insert text here" onChange={ onTextChange } value={ text } onClick={ onClick }></textarea>
-      <textarea placeholder="UPPERCASE" value={ text?.toUpperCase() } onClick={ onClick }></textarea>
-      <textarea placeholder="lowercase" value={ text?.toLowerCase() } onClick={ onClick }></textarea>
+      <textarea placeholder="UPPERCASE" defaultValue={ text?.toUpperCase() } onClick={ onClick }></textarea>
+      <textarea placeholder="lowercase" defaultValue={ text?.toLowerCase() } onClick={ onClick }></textarea>
     </>
   );
 };
