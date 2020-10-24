@@ -1,4 +1,5 @@
-import React, { useCallback } from "react"
+import React, { useCallback } from 'react';
+import './TabTitle.scss';
 
 type Props = {
   title: string
@@ -9,12 +10,12 @@ type Props = {
 export const TabTitle: React.FC<Props> = ({ title, setSelectedTab, index }) => {
 
   const onClick = useCallback(() => {
-    setSelectedTab(index)
-  }, [setSelectedTab, index])
+    setSelectedTab(index);
+  }, [setSelectedTab, index]);
 
   return (
     <li>
-      <button onClick={onClick}>{title}</button>
+      <button onClick={ onClick }>{ title }</button>
     </li>
-  )
-}
+  );
+};

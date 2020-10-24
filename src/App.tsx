@@ -1,18 +1,24 @@
 import React from 'react';
 import './App.scss';
 import { Casing } from './components/Casing';
-import { Tabs } from './components/tabber/Tabs';
-import { Tab } from './components/tabber/Tab';
+import { Tabs } from './components/tabs/Tabs';
+import { Tab } from './components/tabs/Tab';
 
 function App() {
+
   const text = 'Daniel';
   return (
     <div className="App">
-      {/*<Casing text={ text }/>*/ }
       <Tabs>
-        <Tab title="Lemon">Lemon is yellow</Tab>
-        <Tab title="Strawberry">Strawberry is red</Tab>
-        <Tab title="Pear">Pear is green</Tab>
+        <Tab title="Casing">
+          <Casing text={ text }/>
+        </Tab>
+        <Tab title="Tab 2">
+          <div>Tab 2</div>
+        </Tab>
+        <Tab title="Tab 3">
+          <div>Tab 3</div>
+        </Tab>
       </Tabs>
     </div>
   );
