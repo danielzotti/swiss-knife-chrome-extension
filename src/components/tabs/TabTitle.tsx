@@ -1,18 +1,20 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import './TabTitle.scss';
 
 type Props = {
   title: string
   index: number
-  setSelectedTab: (index: number) => void
+  setActiveTab: (index: number) => void
   isActive: boolean
 }
 
-export const TabTitle: React.FC<Props> = ({ title, setSelectedTab, index, isActive }) => {
+export const TabTitle: React.FC<Props> = ({ title, setActiveTab, index, isActive }) => {
 
-  const onClick = useCallback(() => {
-    setSelectedTab(index);
-  }, [setSelectedTab, index]);
+  const onClick = () => {
+    if(!isActive) {
+      setActiveTab(index);
+    }
+  };
 
   return (
     <li className={ isActive ? 'active' : undefined }>

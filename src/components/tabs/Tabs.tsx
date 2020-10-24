@@ -1,13 +1,19 @@
 import React, { ReactElement, useState } from 'react';
 import { TabTitle } from './TabTitle';
 import './Tabs.scss';
+import { setItemToLocalStorage } from '../../services/LocalStorage';
 
 type Props = {
   children: ReactElement[]
 }
 
 export const Tabs: React.FC<Props> = ({ children }) => {
-  const [selectedTab, setSelectedTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(1);
+
+  const onActiveTabChanged = (tabIndex: number) => {
+    setActiveTab(tabIndex);
+    setItemToLocalStorage('tabIndex', tabIndex.toString());
+  };
 
   return (
     <div className="Tabs">
@@ -17,14 +23,15 @@ export const Tabs: React.FC<Props> = ({ children }) => {
             key={ index }
             title={ item.props.title }
             index={ index }
-            isActive={ index === selectedTab }
-            setSelectedTab={ setSelectedTab }
+            isActive={ index === activeTab }
+            setActiveTab={ onActiveTabChanged }
           />
         )) }
       </ul>
       <div className="tabs__content">
-        { children[selectedTab] }
+        { children[activeTab] }
       </div>
+      <div>Current tab: { activeTab }</div>
     </div>
   );
 };

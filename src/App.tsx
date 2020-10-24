@@ -12,7 +12,6 @@ import { Notepad } from './components/notepad/Notepad';
 library.add(fab, faCheckSquare, faCoffee, faBackspace);
 
 function App(data: any) {
-  console.log(data);
   return (
     <div className="App">
       <Tabs>

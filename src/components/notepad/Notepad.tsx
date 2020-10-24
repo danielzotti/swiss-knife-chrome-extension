@@ -1,54 +1,57 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Notepad.scss';
-import { Debugger } from 'inspector';
+import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/LocalStorage';
 
-declare var chrome: any;
 type Props = {
-  text?: string;
+  // text?: string;
 }
-export const Notepad = (props: Props) => {
-  const [text, setText] = useState(props.text);
 
-  let hasLocalStorageAccess = false;
+interface NotepaLocalStorage {
+  notepad?: string;
+}
+
+export const Notepad = (props: Props) => {
+  // const [text, setText] = useState(props.text);
 
   useEffect(() => {
-    if(chrome?.storage?.local) {
-      hasLocalStorageAccess = true;
-      chrome.storage.local.get(['notepad'], function(data: any) {
-        if(data?.notepad) {
-          console.log(data.notepad);
-          setText(data.notepad);
-        } else {
-          console.log('NO DATA!');
-        }
-      });
-    }
+    getItemFromLocalStorage('notepad', (val: string) => {
+      setInnerHtml(val, contendEditable);
+    });
+    // if(chrome?.storage?.local) {
+    //   hasLocalStorageAccess = true;
+    //   chrome.storage.local.get(['notepad'], function(data: NotepaLocalStorage) {
+    //     if(data?.notepad) {
+    //       setInnerHtml(data?.notepad, contendEditable);
+    //     }
+    //   });
+    // } else {
+    //   try {
+    //     let notepad = window.localStorage.getItem('notepad');
+    //     setInnerHtml(notepad, contendEditable);
+    //   } catch(e) {
+    //     console.log('Error on saving data into localStorage', e);
+    //   }
+    // }
   });
 
+  // let hasLocalStorageAccess = false;
 
-  const onKeyUp = (e: React.FormEvent<HTMLDivElement>) => {
-    const val = (e.target as any).innerHTML;
-    console.log('CURRENT VALUE', e.target);
-    setText(val);
-    if(hasLocalStorageAccess) {
-      chrome.storage.local.set({ notepad: val }, function(test: any) {
-        console.log('Notepad updated with', test);
-      });
-    } else {
-      console.log('NO LOCAL STORAGE ACCESS', val);
-    }
+  const contendEditable = useRef<HTMLDivElement>(null);
 
+  const setInnerHtml = (val: string | null | undefined, ref: React.RefObject<HTMLDivElement>) => {
+    (ref.current as any).innerHTML = val ? val : '';
   };
 
-  const createHtml = () => {
-    return { __html: 'Primo &middot; Secondo' };
+  const onKeyUp = (e: React.FormEvent<HTMLDivElement>) => {
+    const val = (e.target as any)?.innerHTML;
+    setItemToLocalStorage('notepad', val);
   };
 
   return (
     <div className="Notepad"
          contentEditable="true"
+         ref={ contendEditable }
          suppressContentEditableWarning={ true }
-         // dangerouslySetInnerHTML={ createHtml() }
-         onKeyUp={ onKeyUp }>{ text }</div>
+         onKeyUp={ onKeyUp }>&nbsp;</div>
   );
 };
