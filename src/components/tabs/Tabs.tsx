@@ -7,11 +7,11 @@ type Props = {
 }
 
 export const Tabs: React.FC<Props> = ({ children }) => {
-  const [selectedTab, setSelectedTab] = useState(0);
+  const [selectedTab, setSelectedTab] = useState(1);
 
   return (
     <div className="Tabs">
-      <ul>
+      <ul className="tabs__list">
         { children.map((item, index) => (
           <TabTitle
             key={ index }
@@ -22,10 +22,8 @@ export const Tabs: React.FC<Props> = ({ children }) => {
           />
         )) }
       </ul>
-      <div className="content">
-        <div className="content-inner">
-          { children[selectedTab] }
-        </div>
+      <div className="tabs__content">
+        { children[selectedTab] }
       </div>
     </div>
   );
