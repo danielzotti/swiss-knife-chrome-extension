@@ -17,12 +17,15 @@ export const Tabs: React.FC<Props> = ({ children }) => {
             key={ index }
             title={ item.props.title }
             index={ index }
+            isActive={ index === selectedTab }
             setSelectedTab={ setSelectedTab }
           />
         )) }
       </ul>
       <div className="content">
-        { children[selectedTab] }
+        <div className="content-inner">
+          { children[selectedTab] }
+        </div>
       </div>
     </div>
   );

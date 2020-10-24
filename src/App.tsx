@@ -6,12 +6,11 @@ import { Tab } from './components/tabs/Tab';
 
 function App() {
 
-  const text = 'Daniel';
   return (
     <div className="App">
       <Tabs>
         <Tab title="Casing">
-          <Casing text={ text }/>
+          <Casing/>
         </Tab>
         <Tab title="Tab 2">
           <div>Tab 2</div>

@@ -7,5 +7,5 @@ type Props = {
 }
 
 export const Tab: React.FC<Props> = ({ children }) => {
-  return <div>{ children }</div>;
+  return <div className="Tab">{ children }</div>;
 };
