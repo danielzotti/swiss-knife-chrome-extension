@@ -30,11 +30,11 @@ li {
 button {
   border: 1px solid black;
   border-top-width:2px;
+  border-bottom-color: black;
   background-color: lightgray;
   color:black;
   width: 100%;
-  display: inline-block;
+  display: block;
   outline: none;
-  border-bottom-color: black;
   cursor: pointer;
 }
