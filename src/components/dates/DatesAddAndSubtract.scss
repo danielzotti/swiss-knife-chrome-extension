@@ -1,0 +1,13 @@
+.DatesAddAndSubtract {
+  .dates-container {
+    padding:10px;
+    display: flex;
+    input {
+      flex-grow: 1;
+    }
+  }
+  .results {
+    padding:10px;
+  }
+}
+

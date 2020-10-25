@@ -4,14 +4,17 @@ import './Tabs.scss';
 import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/LocalStorage';
 
 type Props = {
+  scope: string;
   children: ReactElement[]
 }
 
-export const Tabs: React.FC<Props> = ({ children }) => {
+export const Tabs: React.FC<Props> = ({ scope, children }) => {
   const [activeTab, setActiveTab] = useState(0);
 
+  const tabKey = `${scope}__tabIndex`
+
   useEffect(() => {
-    getItemFromLocalStorage('tabIndex', (tabIndexString) => {
+    getItemFromLocalStorage(tabKey, (tabIndexString) => {
       let tabIndex = 0;
       if(tabIndexString) {
         tabIndex = !isNaN(parseInt(tabIndexString, 10)) ? parseInt(tabIndexString, 10) : 0;
@@ -22,7 +25,7 @@ export const Tabs: React.FC<Props> = ({ children }) => {
 
   const onActiveTabChanged = (tabIndex: number) => {
     setActiveTab(tabIndex);
-    setItemToLocalStorage('tabIndex', tabIndex.toString());
+    setItemToLocalStorage(tabKey, tabIndex.toString());
   };
 
   return (
