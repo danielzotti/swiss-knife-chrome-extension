@@ -21,6 +21,15 @@ function App(data: any) {
         <Tab title="Notepad">
           <Notepad/>
         </Tab>
+        <Tab title="Future develoment">
+          <ul>
+            <li>Stopwatch</li>
+            <li>Countdown</li>
+            <li>Calculations with dates</li>
+            <li>Words/Characters counter</li>
+            <li>...</li>
+          </ul>
+        </Tab>
       </Tabs>
       <div className="by">
         <a href="https://github.com/danielzotti/swiss-knife-chrome-extension/tree/v1.0.1" target="_blank">v1.0.1</a>&nbsp;

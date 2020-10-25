@@ -10,9 +10,11 @@
 
   ul.tabs__list {
     display: flex;
-    list-style: none;
+
 
     li {
+      list-style-type: none;
+
       flex-grow: 1;
 
       &.active {
