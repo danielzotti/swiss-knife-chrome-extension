@@ -11,8 +11,12 @@ export const Tabs: React.FC<Props> = ({ children }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   useEffect(() => {
-    getItemFromLocalStorage('tabIndex', (tabIndex) => {
-      setActiveTab(!isNaN(parseInt(tabIndex, 10)) ? parseInt(tabIndex) : 0);
+    getItemFromLocalStorage('tabIndex', (tabIndexString) => {
+      let tabIndex = 0;
+      if(tabIndexString) {
+        tabIndex = !isNaN(parseInt(tabIndexString, 10)) ? parseInt(tabIndexString, 10) : 0;
+      }
+      setActiveTab(tabIndex);
     });
   });
 

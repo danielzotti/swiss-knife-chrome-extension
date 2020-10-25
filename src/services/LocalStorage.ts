@@ -14,15 +14,15 @@ export const setItemToLocalStorage = (key: string, val: string) => {
   }
 };
 
-export const getItemFromLocalStorage = (key: string, cb: (val: string) => void) => {
+export const getItemFromLocalStorage = (key: string, cb: (val: string | null) => void) => {
   if(chrome?.storage?.local) {
     chrome.storage.local.get([key], function(data: any) {
-      return cb(data[key] ? data[key] : '');
+      return cb(data[key]);
     });
   } else {
     try {
       const val = window.localStorage.getItem(key);
-      return cb(val ? val : '');
+      return cb(val);
     } catch(e) {
       console.log('Error on getting data from localStorage', e);
     }

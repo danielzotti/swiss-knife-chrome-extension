@@ -7,12 +7,14 @@ type Props = {
   // text?: string;
 }
 
+export const notepadDefaultValue = 'Welcome to <b>Swiss Knife - Notepad</b>!&nbsp;<div><br></div><div><b><u>COMMANDS</u></b>:</div><div>- Ctrl+B for <b>bold</b></div><div>- Ctrl+U for <u>underline</u><br></div><div>- Ctrl+I for&nbsp;<i>italic</i></div><div><br></div><div>Text will be automatically saved every time a key is pressed.</div>';
+
 export const Notepad = (props: Props) => {
   // const [text, setText] = useState(props.text);
 
   useEffect(() => {
-    getItemFromLocalStorage('notepad', (val: string) => {
-      setInnerHtml(val, contendEditable);
+    getItemFromLocalStorage('notepad', (val: string | null) => {
+      setInnerHtml(val === null ? notepadDefaultValue : val, contendEditable);
     });
   });
 

@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import './Casing.scss';
+import './CaseConverter.scss';
 
 type Props = {
   text?: string;
 }
-export const Casing = (props: Props) => {
+export const CaseConverter = (props: Props) => {
   const [text, setText] = useState(props.text);
 
   const onTextChange = (e: React.FormEvent<HTMLTextAreaElement>) => {
@@ -22,7 +22,7 @@ export const Casing = (props: Props) => {
     setText('');
   };
   return (
-    <div className="Casing">
+    <div className="CaseConverter">
       <div className="buttons-container">
         <button className="btn-reset" onClick={ onResetField }>
           <FontAwesomeIcon icon="backspace"/>&nbsp;<span>Empty field</span>
@@ -30,8 +30,8 @@ export const Casing = (props: Props) => {
         <span className="hint">Click on a textarea to copy the content in your clipboard</span>
       </div>
       <textarea placeholder="Insert text here" onChange={ onTextChange } value={ text } onClick={ onClick }></textarea>
-      <textarea placeholder="UPPERCASE" value={ text?.toUpperCase() } onChange={ ()=> {}} onClick={ onClick }></textarea>
-      <textarea placeholder="lowercase" value={ text?.toLowerCase() } onChange={ ()=> {}} onClick={ onClick }></textarea>
+      <textarea readOnly placeholder="UPPERCASE" value={ text?.toUpperCase() } onChange={ ()=> {}} onClick={ onClick }></textarea>
+      <textarea readOnly placeholder="lowercase" value={ text?.toLowerCase() } onChange={ ()=> {}} onClick={ onClick }></textarea>
     </div>
   );
 };

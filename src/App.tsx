@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { Casing } from './components/casing/Casing';
+import { CaseConverter } from './components/case-converter/CaseConverter';
 import { Tabs } from './components/tabs/Tabs';
 import { Tab } from './components/tabs/Tab';
 
@@ -15,13 +15,16 @@ function App(data: any) {
   return (
     <div className="App">
       <Tabs>
-        <Tab title="Casing">
-          <Casing/>
+        <Tab title="Case Converter">
+          <CaseConverter/>
         </Tab>
         <Tab title="Notepad">
           <Notepad/>
         </Tab>
       </Tabs>
+      <div className="by">
+        by <a href="https://www.danielzotti.it" target="_blank">Daniel Zotti</a>
+      </div>
     </div>
   );
 }
