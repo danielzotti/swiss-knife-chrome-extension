@@ -44,8 +44,8 @@ function App(data: any) {
         </Tab>
       </Tabs>
       <div className="by">
-        <a href="https://github.com/danielzotti/swiss-knife-chrome-extension/tree/v1.0.1"
-           target="_blank">v1.0.1</a>&nbsp; by <a href="https://www.danielzotti.it" target="_blank">Daniel Zotti</a>
+        <a href="https://github.com/danielzotti/swiss-knife-chrome-extension/tree/v1.1.0"
+           target="_blank">v1.1.0</a>&nbsp; by <a href="https://www.danielzotti.it" target="_blank">Daniel Zotti</a>
       </div>
     </div>
   );
