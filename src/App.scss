@@ -1,16 +1,23 @@
+@import "styles/themes/default";
+
 .App {
   .by {
-    background-color: lightgrey;
+    background-color: var(--primary-default-bg);
+    color: var(--primary-default-text);
     display: block;
     padding: 5px;
     text-align: right;
     font-size: 10px;
-    color: black;
 
     a {
       &, &:hover, &:visited, &:active, &:focus {
-        color: black;
+        color: var(--primary-default-text);
       }
     }
+  }
+
+  .btn-toggle-theme {
+    margin-right: 15px;
+    font-size: 10px;
   }
 }

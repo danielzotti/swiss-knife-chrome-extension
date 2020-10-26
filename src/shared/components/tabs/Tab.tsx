@@ -1,7 +1,5 @@
 import React from 'react';
 
-import './Tab.scss';
-
 type Props = {
   title: string
 }

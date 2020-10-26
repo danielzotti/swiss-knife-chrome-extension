@@ -1,8 +1,6 @@
-@import "reset.scss";
+@import "styles/reset";
+@import "styles/themes/default";
+@import "styles/base";
 
-html, body {
-  margin: 0;
-  padding:0;
-  min-width: 500px;
-}
+
 

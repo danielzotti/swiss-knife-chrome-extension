@@ -1,0 +1,25 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  min-width: 500px;
+  background-color: var(--primary-default-bg, white);
+  color: var(--primary-default-text, black);
+}
+
+button {
+  border-radius: 3px;
+  border:1px solid var(--primary-default-text);
+  margin:5px;
+  padding:5px 10px;
+
+  color: var(--primary-default-text);
+  background-color: var(--primary-default-bg);
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+
+  &.btn-primary {
+    color: var(--primary-text);
+    background-color: var(--primary);
+  }
+}

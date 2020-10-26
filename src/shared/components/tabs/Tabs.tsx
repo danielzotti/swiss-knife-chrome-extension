@@ -1,7 +1,7 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { TabTitle } from './TabTitle';
 import './Tabs.scss';
-import { getItemFromLocalStorage, setItemToLocalStorage } from '../../services/LocalStorage';
+import { getItemFromLocalStorage, setItemToLocalStorage } from '../../../services/LocalStorage';
 
 type Props = {
   scope: string;
@@ -42,7 +42,9 @@ export const Tabs: React.FC<Props> = ({ scope, children }) => {
         )) }
       </ul>
       <div className="tabs__content">
-        { children[activeTab] }
+        <div className="tabs__content-inner">
+          { children[activeTab] }
+        </div>
       </div>
     </div>
   );
