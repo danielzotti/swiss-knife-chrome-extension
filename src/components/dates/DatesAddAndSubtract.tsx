@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './DatesAddAndSubtract.scss';
 import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 type Props = {}
 export const DatesAddAndSubtract = (props: Props) => {
@@ -41,8 +42,24 @@ export const DatesAddAndSubtract = (props: Props) => {
     setResultText(resultString);
   };
 
+  const resetField = () => {
+    setStartDate(moment().format(chromeDateFormat));
+  };
+
+  const resetTime = () => {
+    setStartDate(`${ startDate.split('T')[0] }T00:00`);
+  };
+
   return (
     <div className="DatesAddAndSubtract">
+      <button onClick={ resetField }>
+        <FontAwesomeIcon icon="backspace"/>&nbsp;<span>Reset field</span>
+      </button>
+
+      <button onClick={ resetTime }>
+        <FontAwesomeIcon icon="clock"/>&nbsp;<span>Reset time</span>
+      </button>
+
       <input type="datetime-local" name="start-date" value={ startDate } onChange={ (e) => {
         setStartDate(e.target.value);
       } }/>

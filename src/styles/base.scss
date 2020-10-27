@@ -24,7 +24,8 @@ textarea, input, select {
 button {
   border-radius: var(--border-radius-default);
   border: 1px solid var(--primary-default-text);
-  margin: 5px;
+  margin-bottom: var(--margin-small);
+  margin-right: var(--margin-small);
   padding: 5px 10px;
 
   font-family: var(--font-family);

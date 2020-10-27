@@ -6,13 +6,13 @@ import { Tab } from './shared/components/tabs/Tab';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
-import { faCheckSquare, faCoffee, faBackspace } from '@fortawesome/free-solid-svg-icons';
+import { faClock, faCheckSquare, faCoffee, faBackspace } from '@fortawesome/free-solid-svg-icons';
 import { Notepad } from './components/notepad/Notepad';
 import { DatesDifference } from './components/dates/DatesDifference';
 import { DatesAddAndSubtract } from './components/dates/DatesAddAndSubtract';
 import { getItemFromLocalStorage, setItemToLocalStorage } from './services/LocalStorage';
 
-library.add(fab, faCheckSquare, faCoffee, faBackspace);
+library.add(fab, faCheckSquare, faClock, faCoffee, faBackspace);
 
 function App(data: any) {
   const [theme, setTheme] = React.useState('light');
