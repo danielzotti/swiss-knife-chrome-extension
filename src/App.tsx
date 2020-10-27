@@ -17,7 +17,7 @@ library.add(fab, faCheckSquare, faClock, faCoffee, faBackspace);
 function App(data: any) {
   const [theme, setTheme] = React.useState('light');
 
-  const appVersion = 'v1.2.0';
+  const appVersion = 'v1.2.1';
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
