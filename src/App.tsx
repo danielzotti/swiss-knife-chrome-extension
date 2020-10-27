@@ -17,53 +17,15 @@ library.add(fab, faCheckSquare, faCoffee, faBackspace);
 function App(data: any) {
   const [theme, setTheme] = React.useState('light');
 
-  // const lightTheme = {
-  //   '--primary-default-bg': '#FFF',
-  //   '--primary-default-text': '#000',
-  //   '--primary': '#1976d2',
-  //   '--primary-light': '#63a4ff',
-  //   '--primary-extra-light': '#d0e6fb',
-  //   '--primary-dark': '#004ba0',
-  //   '--primary-text': '#FFF',
-  //   '--secondary': '#fdd835',
-  //   '--secondary-light': '#ffff6b',
-  //   '--secondary-dark': '#c6a700',
-  //   '--secondary-text': '#000'
-  // };
-  // const darkTheme = {
-  //   '--primary-default-bg': '#212121',
-  //   '--primary-default-text': '#FFF',
-  //   '--primary': '#1976d2',
-  //   '--primary-light': '#484848',
-  //   '--primary-extra-light': '#909090',
-  //   '--primary-dark': '#000000',
-  //   '--primary-text': '#FFF',
-  //   '--secondary': '#607d8b',
-  //   '--secondary-light': '#8eacbb',
-  //   '--secondary-dark': '#34515e',
-  //   '--secondary-text': '#000'
-  // };
-
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
     setTheme(nextTheme);
-    // applyTheme(nextTheme);
     setItemToLocalStorage('Theme', nextTheme);
   };
-
-  // const applyTheme = (nextTheme: string) => {
-  //   const theme: any = nextTheme === 'dark' ? darkTheme : lightTheme;
-  //   setItemToLocalStorage('Theme', nextTheme);
-  //   Object.keys(theme).map((key: string) => {
-  //     const value: string = theme[key];
-  //     document.documentElement.style.setProperty(key, value);
-  //   });
-  // };
 
   useEffect(() => {
     getItemFromLocalStorage('Theme', (theme) => {
       setTheme(theme ? theme : 'light');
-      // applyTheme(theme ? theme : 'light');
     });
   }, []);
 
@@ -92,7 +54,8 @@ function App(data: any) {
             <li>Countdown</li>
             <li>More calculations with dates</li>
             <li>Words/Characters counter</li>
-            <li>...</li>
+            <li>...or <a href="https://github.com/danielzotti/swiss-knife-chrome-extension" target="_blank">propose
+              something!</a></li>
           </ul>
         </Tab>
       </Tabs>

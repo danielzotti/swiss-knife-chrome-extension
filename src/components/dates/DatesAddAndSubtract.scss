@@ -4,7 +4,8 @@
     display: flex;
     input, select {
       flex-grow: 1;
-      margin:var(--margin-small)
+      margin:var(--margin-small);
+      font-size: var(--font-size-default);
     }
   }
   .results {

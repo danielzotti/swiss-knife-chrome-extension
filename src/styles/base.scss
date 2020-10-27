@@ -43,3 +43,8 @@ button {
     background-color: var(--primary);
   }
 }
+a {
+  &, &:hover, &:visited, &:active, &:focus {
+    color: var(--primary-default-text);
+  }
+}

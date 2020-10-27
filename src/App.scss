@@ -12,18 +12,12 @@
     display: block;
     padding: 5px;
     text-align: right;
-    font-size: 10px;
-
-    a {
-      &, &:hover, &:visited, &:active, &:focus {
-        color: var(--primary-default-text);
-      }
-    }
+    font-size: var(--font-size-extra-small);
   }
 
   .btn-toggle-theme {
     margin-right: 15px;
-    font-size: 10px;
+    font-size: var(--font-size-extra-small);
     background-color: var(--secondary);
     color: var(--secondary-text);
     border-color: var(--secondary-text);

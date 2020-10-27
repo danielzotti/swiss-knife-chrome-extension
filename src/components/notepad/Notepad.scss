@@ -1,11 +1,11 @@
 @import "../../styles/themes/default";
 .Notepad {
   .notepad-content {
-    height: 500px;
+    height: 400px;
     overflow: auto;
     margin: 0;
     padding: 10px;
-    font-size: 16px;
+    font-size: var(--font-size-default);
     border: 2px solid var(--secondary-text);
     background-color: var(--secondary);
     color:var(--secondary-text);
@@ -21,7 +21,7 @@
   }
 
   .hint {
-    font-size: 12px;
+    font-size: var(--font-size-small);
     display: inline-block;
     font-style: italic;
   }
