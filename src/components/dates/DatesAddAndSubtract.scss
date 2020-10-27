@@ -1,31 +1,48 @@
 .DatesAddAndSubtract {
-  .dates-container {
-    padding:10px;
+
+  input, select {
+    font-size: var(--font-size-default);
+    margin-bottom: var(--margin-default);
+  }
+
+  [name=start-date] {
+    display: block;
+    width: 100%;
+  }
+
+  .period-container {
+    border: 1px solid var(--primary-default-text);
+    border-radius: var(--border-radius-default);
     display: flex;
-    input, select {
-      margin:var(--margin-small);
-      font-size: var(--font-size-default);
+
+    input,select {
+      border:0;
+      outline: 0;
+      background-color: transparent;
     }
-    [name=start-date]{
-      flex-grow: 3;
-      flex-basis: 150px;
-      min-width:150px;
-    }
-    [name=amount]{
+
+    [name=amount] {
       flex-grow: 1;
-      width:110px;
+      text-align: right;
+      margin:0;
     }
-    [name=period-type]{
-      flex-grow: 2;
-      width:110px;
+
+    [name=period-type] {
+      border-radius: 0;
+      border-left: 1px solid var(--primary-default-text);
+      margin:0;
+      flex-grow: 1;
     }
   }
+
+
   .result {
     margin-top: var(--margin-big);
     text-align: center;
   }
+
   .result--text {
-    padding:10px;
+    padding: 10px;
     text-align: center;
     font-weight: bold;
     font-size: var(--font-size-big);

@@ -33,7 +33,7 @@ export const DatesAddAndSubtract = (props: Props) => {
     let resultDate = null;
     let resultString = null;
     if(startDate && amount !== null && amount !== undefined) {
-      const resultMoment = moment(startDate, chromeDateFormat).add(amount, periodType as any)
+      const resultMoment = moment(startDate, chromeDateFormat).add(amount, periodType as any);
       resultDate = resultMoment.format(dateFormat);
       resultString = resultMoment.format(textFormat);
     }
@@ -43,11 +43,11 @@ export const DatesAddAndSubtract = (props: Props) => {
 
   return (
     <div className="DatesAddAndSubtract">
-      <div className="dates-container">
-        <input type="datetime-local" name="start-date" value={ startDate } onChange={ (e) => {
-          setStartDate(e.target.value);
-        } }/>
-        <input type="number" name="amount" value={ amount } onChange={ (e) => {
+      <input type="datetime-local" name="start-date" value={ startDate } onChange={ (e) => {
+        setStartDate(e.target.value);
+      } }/>
+      <div className="period-container">
+        <input type="number" name="amount" placeholder="amount" value={ amount } onChange={ (e) => {
           setAmount(parseInt(e.target.value, 10));
         } }/>
         <select name="period-type" value={ periodType } onChange={ (e) => {
@@ -60,6 +60,7 @@ export const DatesAddAndSubtract = (props: Props) => {
           }
         </select>
       </div>
+
       <div className="result">
         DATE: <b>{ result }</b>
       </div>
