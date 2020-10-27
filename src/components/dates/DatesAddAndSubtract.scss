@@ -3,13 +3,32 @@
     padding:10px;
     display: flex;
     input, select {
-      flex-grow: 1;
       margin:var(--margin-small);
       font-size: var(--font-size-default);
     }
+    [name=start-date]{
+      flex-grow: 3;
+      flex-basis: 150px;
+      min-width:150px;
+    }
+    [name=amount]{
+      flex-grow: 1;
+      width:110px;
+    }
+    [name=period-type]{
+      flex-grow: 2;
+      width:110px;
+    }
   }
-  .results {
+  .result {
+    margin-top: var(--margin-big);
+    text-align: center;
+  }
+  .result--text {
     padding:10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: var(--font-size-big);
   }
 }
 

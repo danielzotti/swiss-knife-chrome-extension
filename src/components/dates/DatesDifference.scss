@@ -1,17 +1,49 @@
 .DatesDifference {
   .dates-container {
-    padding: 10px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    column-gap: var(--margin-default);
+    row-gap: var(--margin-default);
+    justify-self: center;
+    margin-bottom: var(--margin-default);
 
     input, select {
-      flex-grow: 1;
-      margin: var(--margin-small);
       font-size: var(--font-size-default);
     }
   }
 
   .results {
-    padding: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-self: center;
+    column-gap: var(--margin-default);
+    row-gap: var(--margin-default);
+  }
+
+  .results__item {
+    text-align: center;
+    border: 1px solid var(--primary-default-text);
+    padding: var(--margin-default);
+    border-radius: var(--border-radius-default);
+  }
+
+  .item__name {
+    font-size: var(--font-size-default);
+  }
+
+  .item__value {
+    //.DecimalNumber {
+    //  .integer {
+    //    font-weight: bold;
+    //    font-size: var(--font-size-extra-big);
+    //    color: var(--primary);
+    //  }
+    //
+    //  .decimal, .separator {
+    //    font-size: var(--font-size-small);
+    //    color: var(--primary-default-text);
+    //  }
+    //}
   }
 }
 

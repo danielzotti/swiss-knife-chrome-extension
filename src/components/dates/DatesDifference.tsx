@@ -1,36 +1,60 @@
 import React, { useEffect, useState } from 'react';
 import './DatesDifference.scss';
 import moment from 'moment';
+import { DecimalNumber } from '../../shared/components/DecimalNumber';
 
 type Props = {}
 export const DatesDifference = (props: Props) => {
   const chromeDateFormat = 'yyyy-MM-DD';
   const [startDate, setStartDate] = useState(moment().format(chromeDateFormat));
   const [endDate, setEndDate] = useState(moment().format(chromeDateFormat));
-  const [days, setDays] = useState();
-  const [weeks, setWeeks] = useState();
-  const [months, setMonths] = useState();
-  const [years, setYears] = useState();
+
+  const resultsInit = [
+    {
+      name: 'days',
+      unit: 'd',
+      value: null
+    },
+    {
+      name: 'weeks',
+      unit: 'w',
+      value: null
+    },
+    {
+      name: 'months',
+      unit: 'M',
+      value: null
+    },
+    {
+      name: 'years',
+      unit: 'y',
+      value: null
+    }
+  ];
+
+  const [results, setResults] = useState(resultsInit);
+
 
   useEffect(() => {
     calculate();
-  });
+  }, []);
+
+  useEffect(() => {
+    calculate();
+  }, [startDate, endDate]);
 
   const calculate = () => {
-    let days = null;
-    let weeks = null;
-    let months = null;
-    let years = null;
     if(startDate && endDate) {
-      days = moment(endDate, chromeDateFormat).diff(moment(startDate, chromeDateFormat), 'd', true);
-      weeks = moment(endDate, chromeDateFormat).diff(moment(startDate, chromeDateFormat), 'w', true);
-      months = moment(endDate, chromeDateFormat).diff(moment(startDate, chromeDateFormat), 'M', true);
-      years = moment(endDate, chromeDateFormat).diff(moment(startDate, chromeDateFormat), 'y', true);
+      const x: Array<any> = results.map(i => {
+          const value = moment(endDate, chromeDateFormat).diff(moment(startDate, chromeDateFormat), (i.unit as any), true);
+          return {
+            ...i,
+            value
+          };
+        }
+      );
+      setResults(x);
     }
-    setDays(days);
-    setWeeks(weeks);
-    setMonths(months);
-    setYears(years);
   };
 
   return (
@@ -44,12 +68,16 @@ export const DatesDifference = (props: Props) => {
         } }/>
       </div>
       <div className="results">
-        <ul>
-          <li>days: { days?.toFixed(2) }</li>
-          <li>weeks: { weeks?.toFixed(2) }</li>
-          <li>months: { months?.toFixed(2) }</li>
-          <li>years: { years?.toFixed(2) }</li>
-        </ul>
+        { results.map((i, index) => (
+          <div className="results__item" key={ index }>
+            <div className="item__name">
+              { i.name }
+            </div>
+            <div className="item__value">
+              <DecimalNumber value={ i.value } separator="," />
+            </div>
+          </div>
+        )) }
       </div>
     </div>
   );
