@@ -1,16 +1,36 @@
+@import "themes/default";
+
 html, body {
   margin: 0;
   padding: 0;
   min-width: 500px;
-  background-color: var(--primary-default-bg, white);
-  color: var(--primary-default-text, black);
+  font-family: var(--font-family);
+}
+
+textarea, input, select {
+  font-family: var(--font-family-mono);
+  color:var(--primary-default-text);
+  border-color:var(--primary-default-text);
+  border-style: solid;
+  border-width: 1px;
+  background-color:var(--primary-default-bg);
+}
+
+textarea, input {
+  border-radius: var(--border-radius-default);
+  padding: var(--margin-default);
+}
+input {
+  border-radius: 0;
 }
 
 button {
-  border-radius: 3px;
-  border:1px solid var(--primary-default-text);
-  margin:5px;
-  padding:5px 10px;
+  border-radius: var(--border-radius-default);
+  border: 1px solid var(--primary-default-text);
+  margin: 5px;
+  padding: 5px 10px;
+
+  font-family: var(--font-family);
 
   color: var(--primary-default-text);
   background-color: var(--primary-default-bg);

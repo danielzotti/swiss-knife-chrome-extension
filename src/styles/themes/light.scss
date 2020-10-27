@@ -1,17 +1,31 @@
 :root {
-  --primary-default-bg:#FFF;
-  --primary-default-text:#000;
-  --primary:#1976d2;
-  --primary-light:#63a4ff;
-  --primary-extra-light:#d0e6fb;
-  --primary-dark:#004ba0;
-  --primary-text:#FFF;
+  .theme--light {
+    --primary-default-bg: #FFF;
+    --primary-default-text: #000;
+    --primary: #1976d2;
+    --primary-light: #63a4ff;
+    --primary-extra-light: #d0e6fb;
+    --primary-dark: #004ba0;
+    --primary-text: #FFF;
 
-  --secondary: #fdd835;
-  --secondary-light:#ffff6b;
-  --secondary-dark:#c6a700;
-  --secondary-text:#000;
+    --secondary: #fdd835;
+    --secondary-light: #ffff6b;
+    --secondary-dark: #c6a700;
+    --secondary-text: #000;
 
-  --color-bg: var(--primary-default-bg);
-  --color-text: var(--primary-default-text);
+    // Sizes
+    --margin-small: 5px;
+    --margin-default: calc(var(--margin-small) * 2);
+    --margin-medium: calc(var(--margin-small) * 3);
+    --margin-big: calc(var(--margin-small) * 5);
+
+    --border-radius-small: 3px;
+    --border-radius-default: calc(var(--border-radius-small) * 2);
+    --border-radius-medium: calc(var(--border-radius-small) * 3);
+    --border-radius-big: calc(var(--border-radius-small) * 5);
+
+    // Fonts
+    --font-family: 'Roboto';
+    --font-family-mono: 'Roboto Mono';
+  }
 }

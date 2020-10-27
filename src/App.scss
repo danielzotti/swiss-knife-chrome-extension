@@ -1,6 +1,11 @@
 @import "styles/themes/default";
+@import "styles/base";
 
 .App {
+  background-color: var(--primary-default-bg, white);
+  color: var(--primary-default-text, black);
+  font-family: var(--font-family);
+
   .by {
     background-color: var(--primary-default-bg);
     color: var(--primary-default-text);
@@ -19,5 +24,8 @@
   .btn-toggle-theme {
     margin-right: 15px;
     font-size: 10px;
+    background-color: var(--secondary);
+    color: var(--secondary-text);
+    border-color: var(--secondary-text);
   }
 }

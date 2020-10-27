@@ -1,17 +1,32 @@
 :root {
-  --primary-default-bg:#212121;
-  --primary-default-text:#FFF;
-  --primary:#212121;
-  --primary-light:#484848;
-  --primary-extra-light:#909090;
-  --primary-dark:#000000;
-  --primary-text:#FFF;
+  .theme--dark {
+    --primary-default-bg: #212121;
+    --primary-default-text: #D0D0D0;
+    --primary: #1976d2;
+    --primary-light: #484848;
+    --primary-extra-light: #909090;
+    --primary-dark: #000000;
+    --primary-text: #FFF;
 
-  --secondary: #607d8b;
-  --secondary-light:#8eacbb;
-  --secondary-dark:#34515e;
-  --secondary-text:#000;
+    --secondary: #607d8b;
+    --secondary-light: #8eacbb;
+    --secondary-dark: #34515e;
+    --secondary-text: #000;
 
-  --color-bg: var(--primary-default-bg);
-  --color-text: var(--primary-default-text);
+    // Sizes
+    --margin-small: 5px;
+    --margin-default: calc(var(--margin-small) * 2);
+    --margin-medium: calc(var(--margin-small) * 3);
+    --margin-big: calc(var(--margin-small) * 5);
+
+    --border-radius-small: 1px;
+    --border-radius-default: calc(var(--border-radius-small) * 2);
+    --border-radius-medium: calc(var(--border-radius-small) * 3);
+    --border-radius-big: calc(var(--border-radius-small) * 5);
+
+    // Fonts
+    --font-family: 'Roboto Condensed';
+    --font-family-title: 'Roboto Slab';
+    --font-family-mono: 'Syne Mono';
+  }
 }

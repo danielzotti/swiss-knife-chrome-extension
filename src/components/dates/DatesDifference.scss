@@ -1,13 +1,16 @@
 .DatesDifference {
   .dates-container {
-    padding:10px;
+    padding: 10px;
     display: flex;
-    input {
+
+    input, select {
       flex-grow: 1;
+      margin: var(--margin-small);
     }
   }
+
   .results {
-    padding:10px;
+    padding: 10px;
   }
 }
 
