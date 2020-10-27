@@ -9,4 +9,4 @@ It's a collection of useful tools written in React.
 
 
 ## Chrome web store URL
-[TODO]
+https://chrome.google.com/webstore/detail/swiss-knife/jnmlbmgaepngdgmkdlgfdfhofadggaln
