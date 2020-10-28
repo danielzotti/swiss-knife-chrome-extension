@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './DatesDifference.scss';
 import moment from 'moment';
-import { DecimalNumber } from '../../shared/components/DecimalNumber';
+import { DecimalNumber } from '../../shared/components/decimal-number/DecimalNumber';
 
 type Props = {}
 export const DatesDifference = (props: Props) => {
