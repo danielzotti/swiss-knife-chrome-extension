@@ -7,8 +7,8 @@ services:
       dockerfile: Dockerfile
       args:
         - configuration=${CONFIGURATION}
-    container_name: matrimonio_${CONFIGURATION}
+    container_name: swiss-knife_${CONFIGURATION}
     expose:
       - 5001
-    image: dz/matrimonio_${CONFIGURATION}
+    image: dz/swiss-knife_${CONFIGURATION}
     restart: unless-stopped
