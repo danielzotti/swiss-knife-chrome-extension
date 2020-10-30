@@ -27,7 +27,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "build:extension": "INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build && mv build/index.html build/popup.html",
-    "docker:start:local": "docker-compose --file docker-compose.local.yml up --build react"
+    "docker:start:local": "docker-compose --file docker-compose.local.yml up --build react",
+    "start-with-host": "HOST=0.0.0.0 react-scripts start"
   },
   "eslintConfig": {
     "extends": "react-app"

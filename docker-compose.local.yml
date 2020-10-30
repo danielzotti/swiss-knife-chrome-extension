@@ -9,7 +9,7 @@ services:
     image: dz/swiss-knife_local
     ports:
       - "3001:3000"
-    restart: unless-stopped
+    stdin_open: true
     volumes:
       - .:/app
       - /app/node_modules
