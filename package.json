@@ -21,6 +21,7 @@
     "react-scripts": "3.4.4",
     "typescript": "^3.7.5"
   },
+  "homepage": ".",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
