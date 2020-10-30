@@ -9,6 +9,6 @@ services:
         - configuration=${CONFIGURATION}
     container_name: swiss-knife_${CONFIGURATION}
     expose:
-      - 80
+      - 5001
     image: dz/swiss-knife_${CONFIGURATION}
     restart: unless-stopped
