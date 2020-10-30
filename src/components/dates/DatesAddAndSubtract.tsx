@@ -79,7 +79,7 @@ export const DatesAddAndSubtract = (props: Props) => {
       </div>
 
       <div className="result">
-        DATE: <b>{ result }</b>
+        { result }
       </div>
       <div className="result--text">
         { resultText }

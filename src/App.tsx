@@ -50,8 +50,8 @@ function App(data: any) {
             </Tab>
           </Tabs>
         </Tab>
-        <Tab title="Future develoment">
-          <ul>
+        <Tab title="Future develoments">
+          <ul className="future-developments">
             <li>Stopwatch</li>
             <li>Countdown</li>
             <li>More calculations with dates</li>

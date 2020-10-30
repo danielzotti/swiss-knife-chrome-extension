@@ -1,13 +1,19 @@
+@import "../../styles/variables";
+
 .DatesAddAndSubtract {
 
   input, select {
-    font-size: var(--font-size-default);
     margin-bottom: var(--margin-default);
+    font-size: var(--font-size-small);
+    @media (min-width: $breakpoint-xs-min) {
+      font-size: var(--font-size-default);
+    }
   }
 
   [name=start-date] {
     display: block;
     width: 100%;
+
   }
 
   .period-container {
@@ -15,37 +21,40 @@
     border-radius: var(--border-radius-default);
     display: flex;
 
-    input,select {
-      border:0;
+    input, select {
+      border: 0;
       //outline: 0;
+      width: 100%;
       background-color: transparent;
     }
 
     [name=amount] {
       flex-grow: 1;
       text-align: right;
-      margin:0;
+      margin: 0;
     }
 
     [name=period-type] {
       border-radius: 0;
       border-left: 1px solid var(--primary-default-text);
-      margin:0;
-      flex-grow: 1;
+      margin: 0;
+      //flex-grow: 1;
     }
   }
 
 
   .result {
     margin-top: var(--margin-big);
+    color: var(--primary);
+    font-weight: bold;
     text-align: center;
+    font-size: var(--font-size-big);
   }
 
   .result--text {
     padding: 10px;
     text-align: center;
-    font-weight: bold;
-    font-size: var(--font-size-big);
+    font-size: var(--font-size-default);
   }
 }
 

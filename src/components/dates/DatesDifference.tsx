@@ -3,6 +3,7 @@ import './DatesDifference.scss';
 import moment from 'moment';
 import { DecimalNumber } from '../../shared/components/decimal-number/DecimalNumber';
 
+
 type Props = {}
 export const DatesDifference = (props: Props) => {
   const chromeDateFormat = 'yyyy-MM-DD';
@@ -74,7 +75,7 @@ export const DatesDifference = (props: Props) => {
               { i.name }
             </div>
             <div className="item__value">
-              <DecimalNumber value={ i.value } separator="," />
+              <DecimalNumber value={ i.value } separator=","/>
             </div>
           </div>
         )) }
