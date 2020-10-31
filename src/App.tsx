@@ -66,6 +66,7 @@ function App(data: any) {
         <a href={ `https://github.com/danielzotti/swiss-knife-chrome-extension/tree/${ appVersion }` }
            target="_blank">{ appVersion }</a>&nbsp; by <a href="https://www.danielzotti.it" target="_blank">Daniel
         Zotti</a>
+        <span>{process.env.REACT_APP_ENV ? ` - ${process.env.REACT_APP_ENV}` : null }</span>
       </div>
     </div>
   );
