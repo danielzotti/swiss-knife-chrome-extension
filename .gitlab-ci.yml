@@ -16,6 +16,6 @@ deploy_prod:
   environment: Production
   script: "CONFIGURATION=production docker-compose -f docker-compose.deploy.yml -p swiss-knife_production up -d --build"
   only:
-    - deploy_production
+    - deploy_prod
   tags:
     - "contabo"
