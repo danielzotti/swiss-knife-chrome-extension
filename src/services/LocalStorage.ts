@@ -1,7 +1,14 @@
 declare var chrome: any;
 
+export const isInChrome = () => {
+  return (window as any).chrome;
+};
+export const isInChromeExtension = () => {
+  return isInChrome() && !!chrome?.storage?.local;
+};
+
 export const setItemToLocalStorage = (key: string, val: string) => {
-  if(chrome?.storage?.local) {
+  if(isInChromeExtension()) {
     const data: any = {};
     data[key] = val;
     chrome.storage.local.set(data);
@@ -15,7 +22,7 @@ export const setItemToLocalStorage = (key: string, val: string) => {
 };
 
 export const getItemFromLocalStorage = (key: string, cb: (val: string | null) => void) => {
-  if(chrome?.storage?.local) {
+  if(isInChromeExtension()) {
     chrome.storage.local.get([key], function(data: any) {
       return cb(data[key]);
     });
@@ -28,3 +35,4 @@ export const getItemFromLocalStorage = (key: string, cb: (val: string | null) =>
     }
   }
 };
+

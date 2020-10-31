@@ -2,10 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
+import { isInChromeExtension } from './services/LocalStorage';
 
 declare var chrome: any;
 
-if(!!chrome?.storage?.local) {
+if(isInChromeExtension()) {
   chrome.storage.local.get(null, function(data: any) {
     ReactDOM.render(
       <React.StrictMode>
