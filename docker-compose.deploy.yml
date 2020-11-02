@@ -1,7 +1,8 @@
-version: '3'
+# NOTE: doesn't work at the moment!
+version: '3.8'
 
 services:
-  angular:
+  react:
     build:
       context: .
       dockerfile: Dockerfile

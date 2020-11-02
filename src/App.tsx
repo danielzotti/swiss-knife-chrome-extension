@@ -11,13 +11,14 @@ import { Notepad } from './components/notepad/Notepad';
 import { DatesDifference } from './components/dates/DatesDifference';
 import { DatesAddAndSubtract } from './components/dates/DatesAddAndSubtract';
 import { getItemFromLocalStorage, setItemToLocalStorage } from './services/LocalStorage';
+import { environment } from './environments/environment';
 
 library.add(fab, faCheckSquare, faClock, faCoffee, faBackspace);
 
 function App(data: any) {
   const [theme, setTheme] = React.useState('light');
 
-  const appVersion = 'v1.2.1';
+  const appVersion = environment.app.version; //'v1.2.1';
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';

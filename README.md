@@ -18,3 +18,12 @@ Here a list of things I used:
 - React function components & hooks
 - Themes with CSS variables
 - MomentJS
+
+
+## How to start developing locally
+- `npm run docker:start:local`
+- If you need to have the `node_modules` folder in your IDE, you have several ways to achieve it: 
+    - Copy the `node_modules` folder from container `swiss-knife_local` to host: `docker cp swiss-knife_local:/app/node_modules/ .`
+    - Run `npm run copy-node_modules` (for Linux)
+    
+NOTE: If you change the node version, you should remove and copy again the `node_modules` folder 

@@ -1,6 +1,6 @@
 # Stage 0, "build-stage", based on Node.js, to build and compile Angular
 
-FROM node:10.22.1-alpine as build-stage
+FROM node:14.15.0-alpine as build-stage
 
 WORKDIR app
 
@@ -17,7 +17,7 @@ RUN npm run build
 
 # Stage 2, based on NodeJS, to have only the compiled app, ready for production with SSR
 
-FROM node:10.22.1-alpine as serve-stage
+FROM node:14.15.0-alpine as serve-stage
 
 WORKDIR app
 
