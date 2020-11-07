@@ -30,7 +30,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "build:extension": "INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build && mv build/index.html build/popup.html",
+    "build:chrome-extension": "INLINE_RUNTIME_CHUNK=false GENERATE_SOURCEMAP=false react-scripts build && mv build build_chrome && mv build_chrome/index.html build_chrome/popup.html",
+    "build:web": "react-scripts build && mv build build_web",
     "docker:start:local": "docker-compose --file docker-compose.local.yml up --build react",
     "copy-node_modules": "sudo docker cp swiss-knife_local:/app/node_modules .",
     "start-with-host": "HOST=0.0.0.0 react-scripts start"
