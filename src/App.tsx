@@ -11,14 +11,13 @@ import { Notepad } from './components/notepad/Notepad';
 import { DatesDifference } from './components/dates/DatesDifference';
 import { DatesAddAndSubtract } from './components/dates/DatesAddAndSubtract';
 import { getItemFromLocalStorage, setItemToLocalStorage } from './services/LocalStorage';
-import { environment } from './environments/environment';
+import { config } from './config';
 
 library.add(fab, faCheckSquare, faClock, faCoffee, faBackspace);
 
 function App(data: any) {
   const [theme, setTheme] = React.useState('light');
 
-  const appVersion = environment.app.version; //'v1.2.1';
 
   const toggleTheme = () => {
     const nextTheme = theme === 'light' ? 'dark' : 'light';
@@ -62,12 +61,13 @@ function App(data: any) {
           </ul>
         </Tab>
       </Tabs>
-      <div className="by">
+      <div className="footer">
+        <a className="version" title={ `${config.env} / ${config.scope}` } href={ `https://github.com/danielzotti/swiss-knife-chrome-extension/tree/${ config.version }` } target="_blank">{ config.version }</a>
+        <span className="by">
+          by <a href="https://www.danielzotti.it" target="_blank">Daniel Zotti</a>&nbsp;
+        </span>
+
         <button className="btn-toggle-theme" onClick={ toggleTheme }>Toggle theme</button>
-        <a href={ `https://github.com/danielzotti/swiss-knife-chrome-extension/tree/${ appVersion }` }
-           target="_blank">{ appVersion }</a>&nbsp; by <a href="https://www.danielzotti.it" target="_blank">Daniel
-        Zotti</a>
-        <span>{process.env.REACT_APP_ENV ? ` - ${process.env.REACT_APP_ENV}` : null }</span>
       </div>
     </div>
   );

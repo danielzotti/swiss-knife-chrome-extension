@@ -18,17 +18,23 @@
     }
   }
 
-  .by {
+  .footer {
     background-color: var(--primary-default-bg);
     color: var(--primary-default-text);
     display: block;
     padding: 5px;
     text-align: right;
     font-size: var(--font-size-extra-small);
+    .version,
+    .environment,
+    .by {
+      margin-right: var(--margin-small);
+    }
+
   }
 
   .btn-toggle-theme {
-    margin-right: 15px;
+    margin-left: 15px;
     font-size: var(--font-size-extra-small);
     background-color: var(--secondary);
     color: var(--secondary-text);

@@ -1,13 +1,13 @@
-version: '3.8'
+version: '3.7'
 
 services:
   react:
     build:
       context: .
       dockerfile: Dockerfile
-#      args:
-#        - configuration=${CONFIGURATION}
     container_name: swiss-knife_${CONFIGURATION}
+    env_file:
+      - environments/web-${CONFIGURATION}.env
     expose:
       - 5001
     image: dz/swiss-knife_${CONFIGURATION}
