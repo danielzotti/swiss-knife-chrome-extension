@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './DecimalNumber.scss';
 
 type Props = {
@@ -7,9 +7,9 @@ type Props = {
 }
 export const DecimalNumber = (props: Props) => {
 
-  const [integer, setInteger] = useState();
-  const [decimal, setDecimal] = useState();
-  const [separator, setSeparator] = useState(props.separator ? props.separator : ',');
+  const [integer, setInteger] = useState<string>();
+  const [decimal, setDecimal] = useState<string>();
+  const [separator] = useState(props.separator ? props.separator : ',');
 
   useEffect(() => {
     formatValue(props.value);

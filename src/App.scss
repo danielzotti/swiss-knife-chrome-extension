@@ -1,25 +1,43 @@
-@import "styles/themes/default";
-@import "styles/base";
+@use "styles/variables";
+@use "styles/themes/default";
+@use "styles/base";
 
 .App {
   background-color: var(--primary-default-bg, white);
   color: var(--primary-default-text, black);
   font-family: var(--font-family);
 
-  .by {
+  margin: 0 auto;
+  max-width: 600px;
+
+  .future-developments {
+    font-size: var(--font-size-default);
+    @media(min-width: variables.$breakpoint-xs-min) {
+      font-size: var(--font-size-medium);
+    }
+  }
+
+  .footer {
     background-color: var(--primary-default-bg);
     color: var(--primary-default-text);
     display: block;
     padding: 5px;
     text-align: right;
     font-size: var(--font-size-extra-small);
+    .version,
+    .environment,
+    .by {
+      margin-right: var(--margin-small);
+    }
+
   }
 
   .btn-toggle-theme {
-    margin-right: 15px;
+    margin-left: 15px;
     font-size: var(--font-size-extra-small);
     background-color: var(--secondary);
     color: var(--secondary-text);
     border-color: var(--secondary-text);
   }
 }
+

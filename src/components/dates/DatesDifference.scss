@@ -1,23 +1,41 @@
+@use "../../styles/variables";
+
 .DatesDifference {
   .dates-container {
     display: grid;
-    grid-template-columns: 50% 50%;
-    column-gap: var(--margin-default);
-    row-gap: var(--margin-default);
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+
+    gap: var(--margin-default);
     justify-self: center;
+    justify-items: stretch;
+    justify-content: stretch;
     margin-bottom: var(--margin-default);
 
-    input, select {
-      font-size: var(--font-size-default);
+    input {
+      font-size: var(--font-size-small);
+      width:auto;
+    }
+
+
+    @media (min-width: variables.$breakpoint-xs-min) {
+      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+
+      input {
+        font-size: var(--font-size-default);
+      }
     }
   }
 
   .results {
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
     justify-self: center;
-    column-gap: var(--margin-default);
-    row-gap: var(--margin-default);
+    justify-items: stretch;
+    justify-content: stretch;
+    gap: var(--margin-default);
   }
 
   .results__item {
@@ -28,22 +46,14 @@
   }
 
   .item__name {
-    font-size: var(--font-size-default);
+    font-size: var(--font-size-small);
+    @media (min-width: variables.$breakpoint-xs-min) {
+      font-size: var(--font-size-default);
+    }
   }
 
   .item__value {
-    //.DecimalNumber {
-    //  .integer {
-    //    font-weight: bold;
-    //    font-size: var(--font-size-extra-big);
-    //    color: var(--primary);
-    //  }
-    //
-    //  .decimal, .separator {
-    //    font-size: var(--font-size-small);
-    //    color: var(--primary-default-text);
-    //  }
-    //}
+
   }
 }
 
