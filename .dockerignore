@@ -1,0 +1,19 @@
+node_modules
+
+# git
+.gitignore
+.git
+
+# gitlab
+.gitlab-ci.yml
+
+# github
+.github
+
+# docker
+docker-compose.*
+Dockerfile*
+
+# others
+README.md
+
