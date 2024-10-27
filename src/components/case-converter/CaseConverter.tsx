@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import {FormEvent, useState} from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './CaseConverter.scss';
 
@@ -8,11 +8,11 @@ type Props = {
 export const CaseConverter = (props: Props) => {
   const [text, setText] = useState(props.text);
 
-  const onTextChange = (e: React.FormEvent<HTMLTextAreaElement>) => {
+  const onTextChange = (e: FormEvent<HTMLTextAreaElement>) => {
     setText(e.currentTarget.value);
   };
 
-  const onClick = (e: React.FormEvent<HTMLTextAreaElement>) => {
+  const onClick = (e: FormEvent<HTMLTextAreaElement>) => {
     e.currentTarget.select();
     e.currentTarget.setSelectionRange(0, 99999);
     document.execCommand('copy');

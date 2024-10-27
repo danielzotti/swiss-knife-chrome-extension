@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import './DatesAddAndSubtract.scss';
 import moment from 'moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-type Props = {}
-export const DatesAddAndSubtract = (props: Props) => {
+export const DatesAddAndSubtract = () => {
   const periodTypeList: Array<string> = [
     'milliseconds',
     'seconds',
@@ -23,18 +22,18 @@ export const DatesAddAndSubtract = (props: Props) => {
   const [startDate, setStartDate] = useState(moment().format(chromeDateFormat));
   const [periodType, setPeriodType] = useState(periodTypeList[4]);
   const [amount, setAmount] = useState(0);
-  const [result, setResult] = useState();
-  const [resultText, setResultText] = useState();
+  const [result, setResult] = useState<string|null>();
+  const [resultText, setResultText] = useState<string|null>();
 
   useEffect(() => {
     calculate();
   });
 
   const calculate = () => {
-    let resultDate = null;
-    let resultString = null;
+    let resultDate: string | null = null;
+    let resultString: string | null = null;
     if(startDate && amount !== null && amount !== undefined) {
-      const resultMoment = moment(startDate, chromeDateFormat).add(amount, periodType as any);
+      const resultMoment = moment(startDate, chromeDateFormat).add(amount, periodType as moment.unitOfTime.DurationConstructor);
       resultDate = resultMoment.format(dateFormat);
       resultString = resultMoment.format(textFormat);
     }

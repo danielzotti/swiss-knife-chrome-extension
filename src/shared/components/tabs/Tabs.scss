@@ -1,5 +1,5 @@
-@import "../../../styles/variables";
-@import "../../../styles/themes/default";
+@use "../../../styles/variables";
+@use "../../../styles/themes/default";
 
 .Tabs {
   .Tab {
@@ -38,7 +38,7 @@
       background-color: var(--primary-default-bg);
       font-family: var(--font-family-title);
       font-size: var(--font-size-extra-small);
-      @media (min-width: $breakpoint-xs-min) {
+      @media (min-width: variables.$breakpoint-xs-min) {
         font-size: var(--font-size-small);
       }
     }

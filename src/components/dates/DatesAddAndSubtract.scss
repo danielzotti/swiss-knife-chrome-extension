@@ -1,11 +1,11 @@
-@import "../../styles/variables";
+@use "../../styles/variables";
 
 .DatesAddAndSubtract {
 
   input, select {
     margin-bottom: var(--margin-default);
     font-size: var(--font-size-small);
-    @media (min-width: $breakpoint-xs-min) {
+    @media (min-width: variables.$breakpoint-xs-min) {
       font-size: var(--font-size-default);
     }
   }

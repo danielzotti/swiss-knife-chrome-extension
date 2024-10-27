@@ -1,4 +1,4 @@
-@import "../../styles/variables";
+@use "../../styles/variables";
 
 .DatesDifference {
   .dates-container {
@@ -18,7 +18,7 @@
     }
 
 
-    @media (min-width: $breakpoint-xs-min) {
+    @media (min-width: variables.$breakpoint-xs-min) {
       grid-template-columns: auto auto;
       grid-template-rows: auto;
 
@@ -47,7 +47,7 @@
 
   .item__name {
     font-size: var(--font-size-small);
-    @media (min-width: $breakpoint-xs-min) {
+    @media (min-width: variables.$breakpoint-xs-min) {
       font-size: var(--font-size-default);
     }
   }

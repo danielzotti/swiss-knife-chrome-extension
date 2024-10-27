@@ -1,17 +1,17 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Swiss Knife",
   "description": "A collection of tools to be used as a Chrome extension",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "author": "Daniel Zotti",
   "icons": {
     "128": "images/swiss-knife-icon_128.png",
     "48": "images/swiss-knife-icon_48.png",
     "16": "images/swiss-knife-icon_16.png"
   },
-  "browser_action": {
+  "action": {
     "default_title": "Swiss knife",
-    "default_popup": "popup.html",
+    "default_popup": "index.html",
     "default_icon": {
       "128": "images/swiss-knife-icon_128.png",
       "48": "images/swiss-knife-icon_48.png",

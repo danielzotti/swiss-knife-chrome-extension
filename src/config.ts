@@ -6,9 +6,9 @@ export interface Config {
 }
 
 export const config: Config = {
-  env: process.env.REACT_APP_ENV || 'prod',
-  scope: process.env.REACT_APP_SCOPE || 'web',
-  version: process.env.REACT_APP_VERSION || 'v1.2.1',
-  name: process.env.REACT_APP_NAME || 'Swiss knife',
+  env: import.meta.env.VITE_APP_ENV || 'prod',
+  scope: import.meta.env.VITE_APP_SCOPE || 'web',
+  version: import.meta.env.VITE_APP_VERSION || '2.0.1',
+  name: import.meta.env.VITE_APP_NAME || 'Swiss knife',
 };
 

@@ -1,6 +1,6 @@
-@import "styles/variables";
-@import "styles/themes/default";
-@import "styles/base";
+@use "styles/variables";
+@use "styles/themes/default";
+@use "styles/base";
 
 .App {
   background-color: var(--primary-default-bg, white);
@@ -9,11 +9,10 @@
 
   margin: 0 auto;
   max-width: 600px;
-  min-width: 300px;
 
   .future-developments {
     font-size: var(--font-size-default);
-    @media(min-width: $breakpoint-xs-min) {
+    @media(min-width: variables.$breakpoint-xs-min) {
       font-size: var(--font-size-medium);
     }
   }

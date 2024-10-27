@@ -1,11 +1,11 @@
-@import "../../../styles/variables";
+@use "../../../styles/variables";
 
 .DecimalNumber {
   .integer {
     font-weight: bold;
     color: var(--primary);
     font-size: var(--font-size-big);
-    @media (min-width: $breakpoint-xs-min) {
+    @media (min-width: variables.$breakpoint-xs-min) {
       font-size: var(--font-size-extra-big);
     }
   }
@@ -13,7 +13,7 @@
   .decimal, .separator {
     color: var(--primary-default-text);
     font-size: var(--font-size-small);
-    @media (min-width: $breakpoint-xs-min) {
+    @media (min-width: variables.$breakpoint-xs-min) {
       font-size: var(--font-size-default);
     }
   }
