@@ -23,7 +23,7 @@ WORKDIR /app
 COPY --from=build-stage /app/package.json ./
 
 # copy (build-stage)/app/dist in /app
-COPY --from=build-stage /app/build ./build
+COPY --from=build-stage /app/dist ./build
 COPY --from=build-stage /app/server.js ./build/server.js
 
 RUN npm install express@4.17.1
