@@ -27,3 +27,9 @@ Here a list of things I used:
     - Run `npm run copy-node_modules` (for Linux)
 
 NOTE: If you change the node version, you should remove and copy again the `node_modules` folder 
+
+## TODO
+- [x] Upgrade to `React 18` and `Vite`
+- [ ] Fix old React code
+- [ ] Upgrade `fortawesome`
+- [ ] Add `luxon` and remove `moment`
