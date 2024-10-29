@@ -1,5 +1,5 @@
-var express = require('express');
-var app = express();
+import express from 'express';
+const app = express();
 const port = 5001;
 // static file serve
 app.use(express.static(__dirname));
