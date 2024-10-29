@@ -61,7 +61,7 @@ function App() {
                 </Tab>
             </Tabs>
             <div className="footer">
-                <a className="version" title={`${config.env} / ${config.scope}`}
+                <a className="version"
                    href={`https://github.com/danielzotti/swiss-knife-chrome-extension/tree/v${config.version}`}
                    target="_blank">{config.name} v{config.version}</a>
                 <span className="by">
