@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview-with-host": "vite preview --host",
+    "docker:start:local": "docker compose --file docker-compose.local.yml up --build react"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",

@@ -14,4 +14,4 @@ ENV PORT=$DEFAULT_PORT
 
 EXPOSE $PORT
 
-CMD ["npm","run","start-with-host"]
+CMD ["npm","run","preview-with-host"]
