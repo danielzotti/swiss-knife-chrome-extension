@@ -1,5 +1,5 @@
 # Stage 0, "build-stage", based on Node.js, to build and compile React
-FROM node:14.15.0-alpine as build-stage
+FROM node:20.18.0-alpine as build-stage
 
 WORKDIR /app
 
@@ -15,7 +15,7 @@ COPY . .
 RUN npm run build
 
 # Stage 2, based on NodeJS, to have only the compiled app, ready for production
-FROM node:14.15.0-alpine as serve-stage
+FROM node:20.18.0-alpine as serve-stage
 
 WORKDIR /app
 
