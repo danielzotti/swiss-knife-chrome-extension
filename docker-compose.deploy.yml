@@ -4,8 +4,6 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: swiss-knife_${CONFIGURATION}
-    env_file:
-      - environments/web-${CONFIGURATION}.env
     expose:
       - 5001
     image: dz/swiss-knife_${CONFIGURATION}
