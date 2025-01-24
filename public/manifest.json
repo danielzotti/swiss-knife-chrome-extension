@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Swiss Knife",
   "description": "A collection of tools to be used as a Chrome extension",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Daniel Zotti",
   "icons": {
     "128": "images/swiss-knife-icon_128.png",
