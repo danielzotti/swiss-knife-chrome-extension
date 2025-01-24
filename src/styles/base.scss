@@ -3,12 +3,12 @@
 html, body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-family);
-  min-width: 300px;
+  font-family: var(--font-family), sans-serif;
+  min-width: 500px;
 }
 
 textarea, input, select {
-  font-family: var(--font-family-mono);
+  font-family: var(--font-family-mono), monospace;
   color:var(--primary-default-text);
   border-color:var(--primary-default-text);
   border-style: solid;
@@ -28,7 +28,7 @@ button {
   margin-right: var(--margin-small);
   padding: 5px 10px;
 
-  font-family: var(--font-family);
+  font-family: var(--font-family), sans-serif;
 
   color: var(--primary-default-text);
   background-color: var(--primary-default-bg);

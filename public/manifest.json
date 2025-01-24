@@ -19,6 +19,13 @@
     }
   },
   "permissions": [
-    "storage"
-  ]
+    "storage",
+    "scripting",
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "service-worker.js",
+    "type": "module"
+  }
 }
